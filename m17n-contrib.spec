@@ -1,4 +1,4 @@
-%define version	1.1.0
+%define version	1.1.1
 %define release	%mkrel 1
 
 %define m17n-db_version 1.3.4
@@ -11,10 +11,6 @@ Group:     System/Internationalization
 License:   LGPL
 URL:       http://www.m17n.org/m17n-lib-en/
 Source0:   %{name}-%{version}.tar.bz2
-
-# It will be fixed soon.
-Patch0:    m17n-contrib-fix-build.diff
-
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires:        m17n-db >= %{m17n-db_version}
 BuildRequires:   m17n-db-devel >= %{m17n-db_version}
@@ -25,7 +21,6 @@ Contributed input methods for m17n library.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 [[ ! -x configure ]] && ./bootstrap.sh
@@ -35,6 +30,9 @@ Contributed input methods for m17n library.
 %install
 rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
+
+# The file conflicts with m17n-data
+rm -f $RPM_BUILD_ROOT%{_datadir}/m17n/bn-itrans.mim
 
 %clean
 rm -rf $RPM_BUILD_ROOT
