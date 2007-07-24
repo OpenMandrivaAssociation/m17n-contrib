@@ -1,4 +1,4 @@
-%define version	1.1.2
+%define version	1.1.3
 %define release	%mkrel 1
 
 %define m17n-db_version 1.4.0
@@ -35,7 +35,6 @@ rm -f $RPM_BUILD_ROOT%{_datadir}/m17n/bn-itrans.mim
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-
 
 %files
 %defattr(-,root,root)
