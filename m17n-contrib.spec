@@ -33,12 +33,12 @@ rm -rf $RPM_BUILD_ROOT
 # The file conflicts with m17n-data
 rm -f $RPM_BUILD_ROOT%{_datadir}/m17n/bn-itrans.mim
 
+%{find_lang} %{name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(-,root,root)
 %doc AUTHORS COPYING ChangeLog NEWS README
-%{_bindir}/tbl2mim.awk
-%{_datadir}/m17n/*.mim
-%{_datadir}/m17n/icons/*.png
+%{_datadir}/m17n
