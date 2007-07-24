@@ -41,4 +41,6 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(-,root,root)
 %doc AUTHORS COPYING ChangeLog NEWS README
-%{_datadir}/m17n
+%{_datadir}/m17n/*.mim
+%{_datadir}/m17n/icons/*
+%{_datadir}/m17n/scripts/*
