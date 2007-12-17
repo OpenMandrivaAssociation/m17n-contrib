@@ -11,7 +11,6 @@ Group:     System/Internationalization
 License:   LGPL
 URL:       http://www.m17n.org/m17n-lib-en/
 Source0:   http://www.m17n.org/m17n-lib-download/%{name}-%{version}.tar.bz2
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires:        m17n-db >= %{m17n-db_version}
 BuildRequires:   m17n-db-devel >= %{m17n-db_version}
 
