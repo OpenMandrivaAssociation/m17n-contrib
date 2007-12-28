@@ -1,16 +1,16 @@
-%define version	1.1.3
+%define version	1.1.4
 %define release	%mkrel 1
 
-%define m17n-db_version 1.4.0
+%define m17n-db_version 1.5.0
 
 Name:      m17n-contrib
 Summary:   Contributed input methods for m17n library
 Version:   %{version}
 Release:   %{release}
 Group:     System/Internationalization
-License:   LGPL
+License:   LGPLv2+
 URL:       http://www.m17n.org/m17n-lib-en/
-Source0:   http://www.m17n.org/m17n-lib-download/%{name}-%{version}.tar.bz2
+Source0:   http://www.m17n.org/m17n-lib-download/%{name}-%{version}.tar.gz
 Requires:        m17n-db >= %{m17n-db_version}
 BuildRequires:   m17n-db-devel >= %{m17n-db_version}
 
@@ -39,7 +39,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(-,root,root)
-%doc AUTHORS COPYING ChangeLog NEWS README
+%doc AUTHORS ChangeLog NEWS README
 %{_datadir}/m17n/*.mim
 %{_datadir}/m17n/icons/*
 %{_datadir}/m17n/scripts/*
