@@ -1,7 +1,7 @@
 %define version	1.1.6
-%define release	%mkrel 1
+%define release	%mkrel 2
 
-%define m17n-db_version 1.5.0
+%define m17n_db_version 1.5.0
 
 Name:      m17n-contrib
 Summary:   Contributed input methods for m17n library
@@ -11,8 +11,8 @@ Group:     System/Internationalization
 License:   LGPLv2+
 URL:       http://www.m17n.org/m17n-lib-en/
 Source0:   http://www.m17n.org/m17n-lib-download/%{name}-%{version}.tar.gz
-Requires:        m17n-db >= %{m17n-db_version}
-BuildRequires:   m17n-db-devel >= %{m17n-db_version}
+Requires:        m17n-db >= %{m17n_db_version}
+BuildRequires:   m17n-db-devel >= %{m17n_db_version}
 
 %description
 Contributed input methods for m17n library.
