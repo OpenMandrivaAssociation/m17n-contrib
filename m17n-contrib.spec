@@ -1,5 +1,5 @@
 %define version	1.1.9
-%define release	%mkrel 1
+%define release	%mkrel 2
 
 %define m17n_db_version 1.5.0
 
@@ -13,6 +13,7 @@ URL:       http://www.m17n.org/m17n-lib-en/
 Source0:   http://www.m17n.org/m17n-lib-download/%{name}-%{version}.tar.gz
 Requires:        m17n-db >= %{m17n_db_version}
 BuildRequires:   m17n-db-devel >= %{m17n_db_version}
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-%{release}-buildroot
 
 %description
@@ -23,7 +24,7 @@ Contributed input methods for m17n library.
 
 %build
 [[ ! -x configure ]] && ./bootstrap.sh
-%configure2_5x
+%configure2_5x --build=%{_host}
 %make
 
 %install
