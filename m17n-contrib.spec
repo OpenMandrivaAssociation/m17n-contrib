@@ -1,5 +1,5 @@
 %define version	1.1.12
-%define release	%mkrel -c RC 1
+%define release	%mkrel 1
 
 %define m17n_db_version 1.5.0
 
@@ -10,7 +10,7 @@ Release:   %{release}
 Group:     System/Internationalization
 License:   LGPLv2+
 URL:       http://www.m17n.org/m17n-lib-en/
-Source0:   http://www.m17n.org/m17n-lib-download/%{name}-%{version}RC.tar.gz
+Source0:   http://www.m17n.org/m17n-lib-download/%{name}-%{version}.tar.gz
 Requires:        m17n-db >= %{m17n_db_version}
 BuildRequires:   m17n-db-devel >= %{m17n_db_version}
 BuildArch:	noarch
@@ -20,7 +20,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-%{release}-buildroot
 Contributed input methods for m17n library.
 
 %prep
-%setup -qn %{name}-%{version}RC
+%setup -qn %{name}-%{version}
 
 %build
 [[ ! -x configure ]] && ./bootstrap.sh
