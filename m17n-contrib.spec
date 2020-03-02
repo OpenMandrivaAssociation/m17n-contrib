@@ -1,6 +1,6 @@
 %define __noautoreq '.*/bin/awk|.*/bin/gawk'
-%define version	1.1.12
-%define release	3
+%define version	1.1.14
+%define release	1
 
 %define m17n_db_version 1.5.0
 
@@ -25,12 +25,12 @@ Contributed input methods for m17n library.
 
 %build
 [[ ! -x configure ]] && ./bootstrap.sh
-%configure2_5x --build=%{_host}
-%make
+%configure --build=%{_host}
+%make_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%makeinstall_std
+%make_install
 
 # The file conflicts with m17n-data
 rm -f $RPM_BUILD_ROOT%{_datadir}/m17n/bn-itrans.mim
