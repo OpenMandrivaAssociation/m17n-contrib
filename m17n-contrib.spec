@@ -13,6 +13,11 @@ License:   LGPLv2+
 URL:       https://www.m17n.org/m17n-lib-en/
 Source0:   http://www.m17n.org/m17n-lib-download/%{name}-%{version}.tar.gz
 Requires:        m17n-db >= %{m17n_db_version}
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:   m17n-db-devel >= %{m17n_db_version}
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-%{release}-buildroot
